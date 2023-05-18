@@ -1,0 +1,236 @@
+# SimVision Command Script (Tue Apr 11 12:33:01 PM EDT 2023)
+#
+# Version 19.03.s010
+#
+# You can restore this configuration with:
+#
+#     simvision -input /afs/ece.cmu.edu/usr/ggeethak/my_projects/lab_18980/rtl/simvision.svcf
+#  or simvision -input /afs/ece.cmu.edu/usr/ggeethak/my_projects/lab_18980/rtl/simvision.svcf database1 database2 ...
+#
+
+
+#
+# Preferences
+#
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set toolbar-Standard-Console {
+  usual
+  position -pos 1
+}
+preferences set toolbar-Search-Console {
+  usual
+  position -pos 2
+}
+preferences set toolbar-Standard-WaveWindow {
+  usual
+  position -pos 1
+}
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+preferences set toolbar-Windows-WaveWindow {
+  usual
+  position -pos 4
+}
+
+#
+# Databases
+#
+array set dbNames ""
+set dbNames(realName1) [ database require chip -hints {
+	file ./chip.trn
+	file /afs/ece.cmu.edu/usr/ggeethak/my_projects/lab_18980/rtl/chip.trn
+}]
+if {$dbNames(realName1) == ""} {
+    set dbNames(realName1) chip
+}
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+mmap new  -reuse -name control_unit__state -radix %x -contents {{%x=10 -label BACK_PROP_ACC}
+{%x=05 -label FWD_ACC}
+{%x=02 -label FWD_LOAD_INP}
+{%x=04 -label FWD_LOAD_MODEL_MEM}
+{%x=03 -label FWD_LOAD_TARGET_MEM}
+{%x=0c -label GRAD_BIAS_ACC}
+{%x=0d -label GRAD_BIAS_STORE}
+{%x=0a -label GRAD_WT_ACC}
+{%x=0b -label GRAD_WT_STORE}
+{%x=08 -label LOAD_INT_OP_MEMORY}
+{%x=07 -label LOSS_CALC}
+{%x=00 -label RESET}
+{%x=01 -label SETUP}
+{%x=0f -label TRAIN_BACK_PROP_SETUP}
+{%x=09 -label TRAIN_GRAD_PARAM_SETUP}
+{%x=06 -label TRAIN_LOAD_INT_OUT_GRAD_MEM}
+{%x=0e -label TRAIN_LOAD_MODEL_MEM}}
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x977+1910+20}] != ""} {
+    window geometry "Waveform 1" 1920x977+1910+20
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar select designbrowser
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 264 \
+    -units ps \
+    -valuewidth 158
+waveform baseline set -time 0
+
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_CU.state[4:0]}]}
+	} ]]
+waveform format $id -radix control_unit__state
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.clk}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_CU.layer_count[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_CU.count[7:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.mult_inp_1[15:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.mult_inp_2[15:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.add_inp[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_MAC.partial_out[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_CU.mux_piso_in[1:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_CU.piso_load}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_CU.piso_shift}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_INP_SHIFT.piso_in[15:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_INP_SHIFT.piso_shift_out[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.dldz[15:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_grad_weight_mem_addr[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_grad_weight_mem_en}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_grad_weight_mem_write_en}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_grad_weight_mem_data_out[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_grad_weight_mem_data_in[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_grad_bias_mem_en}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_grad_bias_mem_write_en}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_grad_bias_mem_data_out[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_grad_bias_mem_data_in[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_grad_bias_mem_addr[1:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_weight_mem_en}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_weight_mem_write_en}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_weight_mem_data_out[15:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_weight_mem_data_in[15:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.model_weight_mem_addr[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.partial_out_q[15:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.partial_out_reduced[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.en_adder_tree}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_MAC.INST_SIPO.A_in[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_MAC.INST_SIPO.A_out[15:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_CU.dldA[15:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_CU.sipo_shift}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_CU.int_op_mem_addr[1:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_CU.int_op_mem_en}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.INST_CU.int_op_mem_write_en}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.int_op_mem_data_in[15:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{$dbNames(realName1)::[format {top_tb.INST_TARGET.training_done}]}
+	} ]]
+
+waveform xview limits 1334397ps 1457571ps
+waveform set -signalfilterentry model_bias*
+waveform set -signalfilterentry model_weight*
+waveform set -signalfilterentry mux_piso_in
+waveform set -signalfilter is_training
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 600x250+40+42
+
+#
+# Layout selection
+#
+

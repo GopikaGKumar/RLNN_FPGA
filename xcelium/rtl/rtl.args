@@ -1,0 +1,25 @@
+-clean
+-nospecify
+-timescale 1ns/1ns
+-mess
+-access +rwc
+top_tb.sv
+top_module.sv
+top_module_wrapper.v
+sram_array.sv
+sram_array_dist.sv
+sram_model.sv
+sram_model_dist.sv
+register.sv
+compute_unit.sv
+mac_array.sv
+accumulator.sv
+quantizer_array.sv
+mac.sv
+relu_rounding.sv
+input_unit.sv
+piso.sv
+control_unit.sv
+adder_tree_trial.sv
+adder.sv
+sipo.sv

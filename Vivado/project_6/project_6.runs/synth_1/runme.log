@@ -1,0 +1,241 @@
+
+*** Running vivado
+    with args -log design_1_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+
+
+****** Vivado v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source design_1_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/scratch/643_vitis_ggeethak/ip_repo/axi_rlnn_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/afs/ece.cmu.edu/class/ece643/software/xilinxVitis/Vivado/2021.1/data/ip'.
+Command: synth_design -top design_1_wrapper -part xczu9eg-ffvb1156-2-e -flatten_hierarchy none
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Common 17-1540] The version limit for your license is '2022.11' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 12512
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3051.996 ; gain = 47.773 ; free physical = 69151 ; free virtual = 124839
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'design_1' [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:13]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_rlnn_0_0' [/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/.Xil/Vivado-12410-ece006.ece.local.cmu.edu/realtime/design_1_axi_rlnn_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_rlnn_0_0' (1#1) [/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/.Xil/Vivado-12410-ece006.ece.local.cmu.edu/realtime/design_1_axi_rlnn_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'irq' of module 'design_1_axi_rlnn_0_0' is unconnected for instance 'axi_rlnn_0' [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:95]
+WARNING: [Synth 8-7023] instance 'axi_rlnn_0' of module 'design_1_axi_rlnn_0_0' has 43 connections declared, but only 42 given [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:95]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ps8_0_axi_periph_0' [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:273]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_QJIMLI' [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:843]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_QJIMLI' (2#1) [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:843]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_1D3SAH3' [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:989]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_1D3SAH3' (3#1) [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:989]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1A7ZMW4' [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:1135]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_ds_0' [/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/.Xil/Vivado-12410-ece006.ece.local.cmu.edu/realtime/design_1_auto_ds_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_ds_0' (4#1) [/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/.Xil/Vivado-12410-ece006.ece.local.cmu.edu/realtime/design_1_auto_ds_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/.Xil/Vivado-12410-ece006.ece.local.cmu.edu/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (5#1) [/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/.Xil/Vivado-12410-ece006.ece.local.cmu.edu/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1A7ZMW4' (6#1) [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:1135]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_0' [/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/.Xil/Vivado-12410-ece006.ece.local.cmu.edu/realtime/design_1_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_0' (7#1) [/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/.Xil/Vivado-12410-ece006.ece.local.cmu.edu/realtime/design_1_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ps8_0_axi_periph_0' (8#1) [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:273]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps8_0_99M_0' [/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/.Xil/Vivado-12410-ece006.ece.local.cmu.edu/realtime/design_1_rst_ps8_0_99M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps8_0_99M_0' (9#1) [/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/.Xil/Vivado-12410-ece006.ece.local.cmu.edu/realtime/design_1_rst_ps8_0_99M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:222]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:222]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:222]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_rst_ps8_0_99M_0' is unconnected for instance 'rst_ps8_0_99M' [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:222]
+WARNING: [Synth 8-7023] instance 'rst_ps8_0_99M' of module 'design_1_rst_ps8_0_99M_0' has 10 connections declared, but only 6 given [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:222]
+INFO: [Synth 8-6157] synthesizing module 'design_1_zynq_ultra_ps_e_0_0' [/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/.Xil/Vivado-12410-ece006.ece.local.cmu.edu/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_zynq_ultra_ps_e_0_0' (10#1) [/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/.Xil/Vivado-12410-ece006.ece.local.cmu.edu/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'maxigp0_awuser' of module 'design_1_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:229]
+WARNING: [Synth 8-7071] port 'maxigp0_aruser' of module 'design_1_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:229]
+WARNING: [Synth 8-7023] instance 'zynq_ultra_ps_e_0' of module 'design_1_zynq_ultra_ps_e_0_0' has 43 connections declared, but only 41 given [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:229]
+INFO: [Synth 8-6155] done synthesizing module 'design_1' (11#1) [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/synth/design_1.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_wrapper' (12#1) [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3093.941 ; gain = 89.719 ; free physical = 68333 ; free virtual = 124021
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3114.750 ; gain = 110.527 ; free physical = 68328 ; free virtual = 124015
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3114.750 ; gain = 110.527 ; free physical = 68328 ; free virtual = 124015
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3114.750 ; gain = 0.000 ; free physical = 68320 ; free virtual = 124008
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'design_1_i/zynq_ultra_ps_e_0'
+Finished Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'design_1_i/zynq_ultra_ps_e_0'
+Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0/design_1_xbar_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph/xbar'
+Finished Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0/design_1_xbar_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph/xbar'
+Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0/design_1_auto_ds_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph/s00_couplers/auto_ds'
+Finished Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0/design_1_auto_ds_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph/s00_couplers/auto_ds'
+Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph/s00_couplers/auto_pc'
+Finished Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph/s00_couplers/auto_pc'
+Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/ip/design_1_rst_ps8_0_99M_0/design_1_rst_ps8_0_99M_0/design_1_rst_ps8_0_99M_0_in_context.xdc] for cell 'design_1_i/rst_ps8_0_99M'
+Finished Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/ip/design_1_rst_ps8_0_99M_0/design_1_rst_ps8_0_99M_0/design_1_rst_ps8_0_99M_0_in_context.xdc] for cell 'design_1_i/rst_ps8_0_99M'
+Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/ip/design_1_axi_rlnn_0_0/design_1_axi_rlnn_0_0/design_1_axi_rlnn_0_0_in_context.xdc] for cell 'design_1_i/axi_rlnn_0'
+Finished Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.gen/sources_1/bd/design_1/ip/design_1_axi_rlnn_0_0/design_1_axi_rlnn_0_0/design_1_axi_rlnn_0_0_in_context.xdc] for cell 'design_1_i/axi_rlnn_0'
+Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.srcs/constrs_1/new/constraints_6.xdc]
+Finished Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.srcs/constrs_1/new/constraints_6.xdc]
+Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3206.535 ; gain = 0.000 ; free physical = 69069 ; free virtual = 124757
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3206.535 ; gain = 0.000 ; free physical = 69069 ; free virtual = 124757
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3206.535 ; gain = 202.312 ; free physical = 69147 ; free virtual = 124835
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu9eg-ffvb1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3206.535 ; gain = 202.312 ; free physical = 69147 ; free virtual = 124835
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/zynq_ultra_ps_e_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/ps8_0_axi_periph/xbar. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/ps8_0_axi_periph/s00_couplers/auto_ds. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/ps8_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/ps8_0_axi_periph. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/rst_ps8_0_99M. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_rlnn_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3206.535 ; gain = 202.312 ; free physical = 69151 ; free virtual = 124839
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3206.535 ; gain = 202.312 ; free physical = 69150 ; free virtual = 124838
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2520 (col length:168)
+BRAMs: 1824 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3206.535 ; gain = 202.312 ; free physical = 69137 ; free virtual = 124829
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 3659.199 ; gain = 654.977 ; free physical = 68561 ; free virtual = 124253
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 3659.199 ; gain = 654.977 ; free physical = 68561 ; free virtual = 124253
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 3678.230 ; gain = 674.008 ; free physical = 68559 ; free virtual = 124251
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 3684.172 ; gain = 679.949 ; free physical = 68558 ; free virtual = 124250
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 3684.172 ; gain = 679.949 ; free physical = 68558 ; free virtual = 124250
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 3684.172 ; gain = 679.949 ; free physical = 68558 ; free virtual = 124250
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-----------------------------+----------+
+|      |BlackBox name                |Instances |
++------+-----------------------------+----------+
+|1     |design_1_auto_ds_0           |         1|
+|2     |design_1_auto_pc_0           |         1|
+|3     |design_1_xbar_0              |         1|
+|4     |design_1_axi_rlnn_0_0        |         1|
+|5     |design_1_rst_ps8_0_99M_0     |         1|
+|6     |design_1_zynq_ultra_ps_e_0_0 |         1|
++------+-----------------------------+----------+
+
+Report Cell Usage: 
++------+---------------------------+------+
+|      |Cell                       |Count |
++------+---------------------------+------+
+|1     |design_1_auto_ds           |     1|
+|2     |design_1_auto_pc           |     1|
+|3     |design_1_axi_rlnn_0        |     1|
+|4     |design_1_rst_ps8_0_99M     |     1|
+|5     |design_1_xbar              |     1|
+|6     |design_1_zynq_ultra_ps_e_0 |     1|
++------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 3684.172 ; gain = 679.949 ; free physical = 68558 ; free virtual = 124250
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 3684.172 ; gain = 588.164 ; free physical = 68599 ; free virtual = 124291
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 3684.176 ; gain = 679.949 ; free physical = 68599 ; free virtual = 124291
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:05 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3684.176 ; gain = 0.000 ; free physical = 68684 ; free virtual = 124376
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3726.797 ; gain = 0.000 ; free physical = 68611 ; free virtual = 124303
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 7b58401f
+INFO: [Common 17-83] Releasing license: Synthesis
+41 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 3740.734 ; gain = 1058.883 ; free physical = 68752 ; free virtual = 124444
+INFO: [Common 17-1381] The checkpoint '/scratch/643_vitis_ggeethak/project_6/project_6.runs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 19 23:00:26 2023...

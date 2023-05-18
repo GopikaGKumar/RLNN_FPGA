@@ -1,0 +1,20 @@
+mmap new -reuse -name control_unit__state -radix %x -contents {
+  {%x=10 -label BACK_PROP_ACC}
+  {%x=05 -label FWD_ACC}
+  {%x=02 -label FWD_LOAD_INP}
+  {%x=04 -label FWD_LOAD_MODEL_MEM}
+  {%x=03 -label FWD_LOAD_TARGET_MEM}
+  {%x=0c -label GRAD_BIAS_ACC}
+  {%x=0d -label GRAD_BIAS_STORE}
+  {%x=0a -label GRAD_WT_ACC}
+  {%x=0b -label GRAD_WT_STORE}
+  {%x=08 -label LOAD_INT_OP_MEMORY}
+  {%x=07 -label LOSS_CALC}
+  {%x=00 -label RESET}
+  {%x=01 -label SETUP}
+  {%x=0f -label TRAIN_BACK_PROP_SETUP}
+  {%x=09 -label TRAIN_GRAD_PARAM_SETUP}
+  {%x=06 -label TRAIN_LOAD_INT_OUT_GRAD_MEM}
+  {%x=0e -label TRAIN_LOAD_MODEL_MEM}
+}
+

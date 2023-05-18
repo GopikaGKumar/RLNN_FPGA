@@ -1,0 +1,1 @@
+set_property BITSTREAM.General.UnconstrainedPins {Allow} [current_design]
